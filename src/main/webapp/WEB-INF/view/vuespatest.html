@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vender/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vender/bootstrap-datetimepicker.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vender/bootstrap-datetimepicker-standalone.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{dataTables.bootstrap.min.css}">
+
+    <script th:src="@{/js/vender/vue.js}"></script>
+    <script th:src="@{/js/vender/vuex.js}"></script>
+    <script th:src="@{/js/vender/vue-router.js}"></script>
+    <script th:src="@{/js/vender/axios.min.js}"></script>
+
+    <script th:src="@{/js/vender/jquery-3.3.1.js}"></script>
+    <script th:src="@{/js/vender/jquery.dataTables.min.js}"></script>
+
+    <script th:src="@{/js/vender/moment.js}"></script>
+    <script th:src="@{/js/vender/bootstrap.js}"></script>
+    <script th:src="@{/js/vender/bootstrap-datetimepicker.min.js}"></script>
+
+
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <router-view></router-view>
+    </div>
+    <!--<script th:src="@{/js/product/main.js?var=15}"></script>-->
+    <script th:src="@{/js/dist/bundle.js?var=16 }"></script>
+  </body>
+</html>

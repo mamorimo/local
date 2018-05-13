@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vender/bootstrap.css}">
+
+    <script th:src="@{/js/vender/vue.js}"></script>
+    <script th:src="@{/js/vender/vuex.js}"></script>
+    <script th:src="@{/js/vender/vue-router.js}"></script>
+    <script th:src="@{/js/vender/jquery-3.3.1.js}"></script>
+    <script th:src="@{/js/vender/bootstrap.js}"></script>
+    <script th:src="@{/js/vender/axios.min.js}"></script>
+
+    <title>LOGIN</title>
+  </head>
+  <body>
+    <div id="app" class="form-horizontal">
+      <h1>LogIn</h1>
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Account</label>
+        <div class="col-sm-2"><input type="text" class="form-control" v-model="inputaccount"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Password</label>
+        <div class="col-sm-2"><input type="text" class="form-control" v-model="inputpassword"></div>
+      </div>
+      <div class="form-group">
+		<div class="col-sm-offset-1 col-sm-2">
+			<button type="submit" class="btn btn-default" v-on:click="doLogin">Login</button>
+		</div>
+	  </div>
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data: {
+            inputaccount:'',
+            inputpassword:'',
+            authData: []
+        },
+        methods: {
+            doLogin: function(){
+
+              var gthis = this
+
+                axios.post('/vuetest/auth/',
+                    {account : this.inputaccount, password : this.inputpassword},
+                    {headers: {'Content-Type': 'application/json'}})
+                .then(response => {
+                  gthis.authData = response.data
+                  window.sessionStorage.setItem("auth_token", gthis.authData.atoken)
+                  window.location.href = "/vuetest/base/?atoken=" + window.sessionStorage.getItem("auth_token")
+                });
+            }
+        }
+    })
+    </script>
+  </body>
+</html>

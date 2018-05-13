@@ -1,0 +1,7 @@
+{
+  "select":[
+    {"value":"item1", "valueView":"セレクト２１"},
+    {"value":"item2", "valueView":"セレクト２２"},
+    {"value":"item3", "valueView":"セレクト２３"}
+  ]
+}

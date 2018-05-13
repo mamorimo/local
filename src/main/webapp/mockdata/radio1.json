@@ -1,0 +1,5 @@
+{
+  "radio1" : { "label": "ラジオ1", "value": "radio1" },
+  "radio2" : { "label": "ラジオ2", "value": "radio2" },
+  "radio3" : { "label": "ラジオ3", "value": "radio3" }
+}
