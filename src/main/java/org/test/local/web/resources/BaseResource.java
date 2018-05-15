@@ -12,6 +12,6 @@ public class BaseResource {
 	@GET
 	public Response init() {
 
-		return Response.ok(new Viewable("/vuespatest")).build();
+		return Response.ok(new Viewable("/vuespatest2")).build();
 	}
 }

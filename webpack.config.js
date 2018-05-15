@@ -1,8 +1,11 @@
 module.exports = {
-  entry: './src/main/webapp/js/product/main.js',
+  entry: {
+    "modul1":"./src/main/webapp/js/product/main.js",
+    "modul2":"./src/main/webapp/js/product/main2.js"
+  },
   output: {
     path: __dirname,
-    filename: './src/main/webapp/js/dist/bundle.js'
+    filename: './src/main/webapp/js/dist/[name].bundle.js'
   },
   resolve: {
     extensions: ['.js', '.vue'],

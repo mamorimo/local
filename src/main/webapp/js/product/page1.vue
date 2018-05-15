@@ -29,11 +29,8 @@
     </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">テキストボックス</label>
-      <div class="col-sm-3 input-group date" id="calendar-input" >
-        <input type="text" v-model="edit.text1" class="form-control" />
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
+      <div class="col-sm-3 input-group date" >
+        <datepicker v-model="text1" v-bind:class="form-control"></datepicker>
       </div>
     </div>
     <div>
@@ -152,8 +149,11 @@
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker'
+
 export default {
   components: {
+    Datepicker
   },
   data: function(){
     return {
@@ -167,6 +167,7 @@ export default {
       select2ed: '',
       modalButtonOn: Object,
       tableDatas: null,
+      text1: '',
 
       dataTable: null,
 
