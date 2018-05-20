@@ -3,15 +3,10 @@ package org.test.local.auth;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.bind.DatatypeConverter;
 
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
-
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureException;
 
 public class JWTVerifyingFilter extends AccessControlFilter {
 
@@ -32,19 +27,9 @@ public class JWTVerifyingFilter extends AccessControlFilter {
             return false;
         }
 
-        String username = null;
-
-        try {
-            username = Jwts.parser().setSigningKey(DatatypeConverter.parseBase64Binary("secret"))
-                    .parseClaimsJws(aToken).getBody().getSubject();
-        } catch (SignatureException e) {
-            e.printStackTrace();
-            return false;
-        }
-
         Subject user = SecurityUtils.getSubject();
 
-        UsernamePasswordToken token = new UsernamePasswordToken(username, "password");
+        JWTAuthenticationToken token = new JWTAuthenticationToken(aToken);
         user.login(token);
 
         return true;

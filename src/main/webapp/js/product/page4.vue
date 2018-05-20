@@ -2,34 +2,50 @@
   <div class="form-horizontal">
     <div class="form-group">
       <div class="col-sm-3">
-        <input type="text"
-          class="form-control"
-          :value="this.$store.state.form.params.username.value"
-          @keyup.stop="update($event.target.value, 'form.params.username.value')" />
+        <datepicker v-model="text1" v-bind:inputClass="'form-control'"></datepicker>
       </div>
     </div>
-    <div>
-      <div v-for="r in this.$store.state.input1" v-bind:key="r.id">
-        <inputons :labelvalue="r.value" :value="r.key"></inputons>
+    <div class="form-group">
+      <div class="col-sm-3">
+        <input type="text" class="form-control">
       </div>
     </div>
-    <button class="btn" @click="isModal = true">モーダル</button>
-    <transition name="modal" v-if="isModal">
-      <div class="overlay" @click="isModal = false">
-        <div class="panel" @click.stop>
-          <button class="btn" @click="isModal = false">閉じる</button>
+    <div class="form-group">
+      <div class="form-group">
+        <div class="col-sm-2">
+          <button class="btn btn-primary" @click="show">Open Modal</button>
         </div>
       </div>
-    </transition>
-    <button @click="toPage5">Go To Page5</button>
+    </div>
+    <modal name="hello-world" @before-close="beforeClose" @closed="closedOf">
+      <div class="form-horizontal">
+        <h1>hello, world!</h1>
+        <div class="form-group">
+          <div class="col-sm-2">
+            <button class="btn btn-primary" v-on:click="hide">Close Modal</button>
+          </div>
+        </div>
+      </div>
+    </modal>
+    <div class="form-group">
+      <div class="form-group">
+        <div class="col-sm-2">
+          <button class="btn btn-primary" @click="toPage5">Go To Page5</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker'
+
 export default {
   data: function() {
     return {
-      isModal: false
+      isModal: false,
+      text1: '',
+      formControl: {}
     }
   },
   methods: {
@@ -38,21 +54,23 @@ export default {
     },
     toPage5: function() {
       this.$router.push("/page5")
+    },
+    show: function () {
+      this.$modal.show('hello-world');
+    },
+    hide: function () {
+      this.$modal.hide('hello-world');
+    },
+    beforeClose (event) {
+      console.log(event)
+    },
+    closedOf (event) {
+      console.log(event)
+      this.$router.push("/page5")
     }
   },
   components: {
-    'inputons': {
-      template:
-      "<div>" +
-        "{{labelvalue}}<input type='text' class='form-control' @keyup.stop='update(labelvalue, $event.target.value)' />" +
-      "</div>",
-      props: ['labelvalue', 'value'],
-      methods: {
-        update: function(label, value) {
-          this.$store.dispatch('inputUpdate2', {label, value})
-        }
-      }
-    }
+    Datepicker
   },
   mounted: function() {
     this.$store.dispatch('getInput1')
@@ -61,65 +79,56 @@ export default {
 </script>
 
 <style>
-.overlay {
-    background: rgba(0, 0, 0, .8);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 900;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+body {
+  font-family: "Helvetica Neue Light", Helvetica, sans-serif;
+  padding: 1em 2em 2em;
+}
+input,
+select {
+  padding: 0.75em 0.5em;
+  font-size: 100%;
+  border: 1px solid #ccc;
+  width: 100%;
 }
 
-.panel {
-    width: 600px;
-    height: 400px;
-    background: #fff;
-    padding: 20px;
-
-    h3 {
-        margin-bottom: 10px;
-    }
+select {
+  height: 2.5em;
 }
 
-.scroll-box {
-    height: 300px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    border: solid 1px #bbb;
+.example {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 0em 1em 1em;
+  margin-bottom: 2em;
 }
-.item-list {
-    list-style: none;
-    padding: 0;
 
-    &.is-border {
-        border: solid 1px #bbb;
-        margin-bottom: 20px;
-    }
-
-    li {
-        border-top: solid 1px #bbb;
-        margin-top: -1px;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-
-        &:first-child {
-            border-top: none;
-        }
-    }
+code,
+pre {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid #bbb;
+  display: block;
+  background: #ddd;
+  border-radius: 3px;
 }
-.btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background: #eee;
+
+.settings {
+  margin: 2em 0;
+  border-top: 1px solid #bbb;
+  background: #eee;
+}
+
+h5 {
+  font-size: 100%;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+.form-group label {
+  font-size: 80%;
+  display: block;
 }
 </style>

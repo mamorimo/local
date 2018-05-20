@@ -1,6 +1,8 @@
 package org.test.local.web.resources;
 
 import java.security.Key;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.ws.rs.Consumes;
@@ -58,13 +60,16 @@ public class AuthResource {
 
         Key signingKey = new SecretKeySpec(apiKeySecretBytes, sigAlg.getJcaName());
 
-        JwtBuilder builder = Jwts.builder()
-                .setSubject(requestDto.account)
-                .signWith(sigAlg, signingKey);
+        Map<String, Object> claims = new HashMap();
+        claims.put("role", "admin");
+
+        JwtBuilder builder = Jwts.builder().setSubject(requestDto.account).addClaims(claims).signWith(sigAlg,
+                signingKey);
 
         requestDto.atoken = builder.compact();
 
         user.getSession().stop();
+        user.logout();
 
         return Response.ok(requestDto).build();
     }

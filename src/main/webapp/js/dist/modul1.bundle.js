@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -505,426 +505,6 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page1_vue__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__page2_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__page3_vue__ = __webpack_require__(16);
-
-
-
-
-const routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__page1_vue__["a" /* default */] }, { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_0__page1_vue__["a" /* default */] }, { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_1__page2_vue__["a" /* default */] }, { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_2__page3_vue__["a" /* default */] }];
-
-const router = new VueRouter({
-  routes
-});
-
-var store = new Vuex.Store({
-  state: {
-    inputes: {
-      select1edObj: {
-        value: '',
-        valueView: ''
-      },
-      select2edObj: {
-        value: '',
-        valueView: ''
-      },
-      radio1: '',
-      text1: '',
-      daySelect1ed: '',
-      modalInput: ''
-    },
-    tableRow: Object
-  },
-  actions: {
-    upDate(context, entity) {
-      context.commit('UPDATE', entity);
-    },
-    searchTrance(context, obj) {
-      context.commit('PAGETRANCE', obj);
-    }
-  },
-  mutations: {
-    UPDATE(state, entity) {
-      state.inputes = entity;
-    },
-    PAGETRANCE(state, obj) {
-      state.tableRow = obj;
-    }
-  }
-});
-
-const app = new Vue({
-  el: '#app',
-  router,
-  store
-});
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page1_vue__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a4d18b90_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page1_vue__ = __webpack_require__(10);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(6)
-}
-var normalizeComponent = __webpack_require__(2)
-/* script */
-
-/* template */
-
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page1_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a4d18b90_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page1_vue__["a" /* default */],
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\main\\webapp\\js\\product\\page1.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] page1.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-a4d18b90", Component.options)
-  } else {
-    hotAPI.reload("data-v-a4d18b90", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(7);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("51bde372", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a4d18b90\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./page1.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a4d18b90\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./page1.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__ = __webpack_require__(9);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  components: {
-    Datepicker: __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__["a" /* default */]
-  },
-  data: function () {
-    return {
-      selectes1: [],
-      selectes2: [],
-      radios: [],
-      calendars: [],
-      m1: [],
-      m2: [],
-      select1ed: '',
-      select2ed: '',
-      modalButtonOn: Object,
-      tableDatas: null,
-      text1: '',
-
-      dataTable: null,
-
-      edit: {
-        select1edObj: {
-          value: '',
-          valueView: ''
-        },
-        select2edObj: {
-          value: '',
-          valueView: ''
-        },
-        radio1: '',
-        text1: '',
-        daySelect1ed: '',
-        modalInput: ''
-      }
-    };
-  },
-  methods: {
-    timeSelected: function (dayId) {
-      this.edit.daySelect1ed = dayId;
-    },
-    modalButton1: function () {
-      axios.get('/vuetest/mockdata/modal1.json?ver=1').then(response => this.modalButtonOn = response.data);
-    },
-    search: async function () {
-      await axios.get('/vuetest/mockdata/table1.json?ver=1').then(response => this.tableDatas = response.data);
-
-      this.dataTable = $('#searchTable').DataTable({});
-    },
-    layCalendar: function () {
-      axios.get('/vuetest/mockdata/calendar1.json').then(response => (this.m1 = response.data.months1.weeks, this.m2 = response.data.months2.weeks));
-    },
-    nextMonth: function () {
-      axios.get('/vuetest/mockdata/calendar2.json').then(response => (this.m1 = response.data.months1.weeks, this.m2 = response.data.months2.weeks));
-    },
-    toPage2: function () {
-
-      this.$store.dispatch('upDate', this.edit);
-
-      this.$router.push("/page2");
-    },
-    toPage3: function (row) {
-
-      this.$store.dispatch('searchTrance', row);
-
-      this.$router.push("/page3");
-    }
-  },
-  computed: {
-    tableshow: function () {
-      return this.tableDatas != null;
-    },
-    calendarShow: function () {
-      return this.m1.length > 0 && this.m2.length > 0;
-    }
-  },
-  watch: {
-    select1ed: function (newValue, oldValue) {
-      this.edit.select1edObj = this.selectes1.filter(function (item) {
-        if (item.value == newValue) return true;
-      })[0];
-
-      axios.get('/vuetest/mockdata/select2.json?ver=1').then(response => this.selectes2 = response.data.select);
-    },
-    select2ed: function (newValue, oldValue) {
-      this.edit.select2edObj = this.selectes2.filter(function (item) {
-        if (item.value == newValue) return true;
-      })[0];
-    },
-    modalButtonOn: function (newObject, oldObject) {
-      this.edit.modalInput = newObject.value;
-    }
-  },
-  mounted: function () {
-    axios.get('/vuetest/mockdata/select1.json?ver=1').then(response => this.selectes1 = response.data.select);
-
-    axios.get('/vuetest/mockdata/radio1.json').then(response => this.radios = response.data);
-  }
-});
-
-$(function () {
-  $('#sampleButton').click(function () {
-    $('#sampleModal').modal();
-  });
-
-  $("#calendar-input").datetimepicker();
-});
-
-/***/ }),
-/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2216,6 +1796,426 @@ var Datepicker = {render: function(){var _vm=this;var _h=_vm.$createElement;var 
 
 /* harmony default export */ __webpack_exports__["a"] = (Datepicker);
 
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page1_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__page2_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__page3_vue__ = __webpack_require__(16);
+
+
+
+
+const routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__page1_vue__["a" /* default */] }, { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_0__page1_vue__["a" /* default */] }, { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_1__page2_vue__["a" /* default */] }, { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_2__page3_vue__["a" /* default */] }];
+
+const router = new VueRouter({
+  routes
+});
+
+var store = new Vuex.Store({
+  state: {
+    inputes: {
+      select1edObj: {
+        value: '',
+        valueView: ''
+      },
+      select2edObj: {
+        value: '',
+        valueView: ''
+      },
+      radio1: '',
+      text1: '',
+      daySelect1ed: '',
+      modalInput: ''
+    },
+    tableRow: Object
+  },
+  actions: {
+    upDate(context, entity) {
+      context.commit('UPDATE', entity);
+    },
+    searchTrance(context, obj) {
+      context.commit('PAGETRANCE', obj);
+    }
+  },
+  mutations: {
+    UPDATE(state, entity) {
+      state.inputes = entity;
+    },
+    PAGETRANCE(state, obj) {
+      state.tableRow = obj;
+    }
+  }
+});
+
+const app = new Vue({
+  el: '#app',
+  router,
+  store
+});
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page1_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a4d18b90_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page1_vue__ = __webpack_require__(10);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(7)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page1_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a4d18b90_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page1_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\main\\webapp\\js\\product\\page1.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] page1.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a4d18b90", Component.options)
+  } else {
+    hotAPI.reload("data-v-a4d18b90", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(8);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("51bde372", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a4d18b90\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./page1.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a4d18b90\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./page1.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  components: {
+    Datepicker: __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__["a" /* default */]
+  },
+  data: function () {
+    return {
+      selectes1: [],
+      selectes2: [],
+      radios: [],
+      calendars: [],
+      m1: [],
+      m2: [],
+      select1ed: '',
+      select2ed: '',
+      modalButtonOn: Object,
+      tableDatas: null,
+      text1: '',
+
+      dataTable: null,
+
+      edit: {
+        select1edObj: {
+          value: '',
+          valueView: ''
+        },
+        select2edObj: {
+          value: '',
+          valueView: ''
+        },
+        radio1: '',
+        text1: '',
+        daySelect1ed: '',
+        modalInput: ''
+      }
+    };
+  },
+  methods: {
+    timeSelected: function (dayId) {
+      this.edit.daySelect1ed = dayId;
+    },
+    modalButton1: function () {
+      axios.get('/vuetest/mockdata/modal1.json?ver=1').then(response => this.modalButtonOn = response.data);
+    },
+    search: async function () {
+      await axios.get('/vuetest/mockdata/table1.json?ver=1').then(response => this.tableDatas = response.data);
+
+      this.dataTable = $('#searchTable').DataTable({});
+    },
+    layCalendar: function () {
+      axios.get('/vuetest/mockdata/calendar1.json').then(response => (this.m1 = response.data.months1.weeks, this.m2 = response.data.months2.weeks));
+    },
+    nextMonth: function () {
+      axios.get('/vuetest/mockdata/calendar2.json').then(response => (this.m1 = response.data.months1.weeks, this.m2 = response.data.months2.weeks));
+    },
+    toPage2: function () {
+
+      this.$store.dispatch('upDate', this.edit);
+
+      this.$router.push("/page2");
+    },
+    toPage3: function (row) {
+
+      this.$store.dispatch('searchTrance', row);
+
+      this.$router.push("/page3");
+    }
+  },
+  computed: {
+    tableshow: function () {
+      return this.tableDatas != null;
+    },
+    calendarShow: function () {
+      return this.m1.length > 0 && this.m2.length > 0;
+    }
+  },
+  watch: {
+    select1ed: function (newValue, oldValue) {
+      this.edit.select1edObj = this.selectes1.filter(function (item) {
+        if (item.value == newValue) return true;
+      })[0];
+
+      axios.get('/vuetest/mockdata/select2.json?ver=1').then(response => this.selectes2 = response.data.select);
+    },
+    select2ed: function (newValue, oldValue) {
+      this.edit.select2edObj = this.selectes2.filter(function (item) {
+        if (item.value == newValue) return true;
+      })[0];
+    },
+    modalButtonOn: function (newObject, oldObject) {
+      this.edit.modalInput = newObject.value;
+    }
+  },
+  mounted: function () {
+    axios.get('/vuetest/mockdata/select1.json?ver=1').then(response => this.selectes1 = response.data.select);
+
+    axios.get('/vuetest/mockdata/radio1.json').then(response => this.radios = response.data);
+  }
+});
+
+$(function () {
+  $('#sampleButton').click(function () {
+    $('#sampleModal').modal();
+  });
+
+  $("#calendar-input").datetimepicker();
+});
 
 /***/ }),
 /* 10 */

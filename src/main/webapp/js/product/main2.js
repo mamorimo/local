@@ -1,5 +1,8 @@
+import VModal from 'vue-js-modal'
 import page4 from './page4.vue';
 import page5 from './page5.vue';
+
+Vue.use(VModal, { componentName: "modal" })
 
 const routes = [
   { path: '/', component: page4 },
